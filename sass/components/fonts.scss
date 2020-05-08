@@ -1,0 +1,153 @@
+@import "variables";
+
+
+/* =Basic structure
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4 {
+  color: $night-font;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+  margin-bottom: 0.6em;
+}
+
+h2,
+.subheading {
+  margin: 2em 0 0.75em;
+  font-size: 1.75em;
+  line-height: 1.2;
+  font-weight: bold;
+  color: $color-brand;
+}
+
+h3 {
+  margin: 1.75em 0 1em;
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+
+h4 {
+  margin: 0 0 0.75em;
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+ul,ol,p {
+  color: $night-para;
+}
+strong, em {
+  color: #fff;
+}
+
+@include device(mobile) {
+  .home h1 {
+    max-width: 240px;
+  }
+}
+
+@media (min-width: 400px) {
+  h1 {
+    font-size: 2.5em;    
+  }
+  .home h1 {
+    max-width: 300px;
+  }
+}
+
+@include device(tablet) {
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+  .home h1 {
+    margin-bottom: 0.5em;
+    max-width: none;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.75em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+}
+
+@include device(laptop) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  padding-bottom: 2em;
+  .site {
+    padding-top: 1.75em;
+    @include device(phablet) {
+      padding-top: 4em;
+    }
+  }
+}
+
+.darklogo {
+  display: none;
+}
+
+.masked {
+  background-color: $color-brand;
+  border-radius: 2px;
+  padding: 2px 20px;
+}
+
+ul,ol {
+  margin-left: 30px;
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+main {
+  a {
+    border-bottom: 1px dashed $night-font;
+  }
+  a:hover {
+    border-color: #333;
+    color: #888;
+  }
+  p {
+    margin-bottom: 1.5em;
+  }
+  @include device(tablet) {
+    p {
+      margin-bottom: 2em;
+    }
+  }
+
+}
+
+.table {
+  text-align: left;
+  margin-bottom: 50px;
+  tr th {
+    border-bottom: 1px solid #aaa;
+  }
+}
+
+.input {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 1em;
+  font-size: 16px;
+}
