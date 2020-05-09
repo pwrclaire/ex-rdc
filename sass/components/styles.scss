@@ -5,17 +5,28 @@
 
 .card {
 	box-shadow: 0 0 20px #000;
-	padding: 2em;
+	padding: 1em;
 	border-radius: 16px;
+	margin-top: 3em;
 	figure {
 		border-radius: 16px;
 		overflow: hidden;
 		margin-bottom: 1em;
+		float: right;
+		width: 25%;
+		min-height: 100px;
+		margin-left: 1em;
+		background: url(/images/avatar.png) no-repeat;
+		background-size: cover;
 	}
 	aside {
+		p {
+			margin-bottom: 1em;
+		}
 		strong {
 			display: block;
-			font-size: 2em;
+			font-size: 1.5em;
+			margin: 0.5em 0;
 		}
 		dt {
 			float: left;
@@ -34,6 +45,45 @@
 			padding-left: 60px;
 		  margin-bottom: 1em;
 		  line-height: 40px;
+		}
+	}
+	.links {
+		list-style: none;
+		margin: 0 0 1em;
+		li {
+			padding: 0;
+			width: 50%;
+			float: left;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-size: 18px auto;
+			background-position: 0 50%;
+			z-index: 99;
+			a {
+				display: inline-block;
+				padding: 10px 0 10px 30px;
+			}
+			a:hover {
+        color: $color-brand;
+			}
+			em {
+				font-style: normal;
+			}
+		}
+		.github {
+			background-image: url(/images/github.png);
+		}
+		.linkedin {
+			background-image: url(/images/linkedin.png);
+		}
+		.twitter {
+			background-image: url(/images/twitter.png);
+		}
+		.website {
+			background-image: url(/images/website.png);
+		}
+		.instagram {
+			background-image: url(/images/instagram.png);
 		}
 	}
 }

@@ -4,31 +4,47 @@
 .site {
 	max-width: $sitewidth;
 	margin: auto;
-	padding: 2em;
+	padding: 1em;
 }
 
 .footer {
 	clear: both;
+	background: #000;
+	min-height: 100px;
+	margin-top: 2em;
 }
 
 @include device(tablet) {
-	.half {
+	.site {
+		padding: 2em;
+	}
+	.card {
 		float: left;
 		width: 47%;
 		margin-right: 3%;
 	}
-	.third {
+}
+
+@include device(laptop) {
+	.site {
+		padding: 2em;
+	}
+	.card {
 		float: left;
 		width: 30%;
-		margin-right: 3%;
-	}
-	.quarter {
-		float: left;
-		width: 23%;
-		margin-right: 3%;
 	}
 }
 
 
 
+.third {
+	float: left;
+	width: 30%;
+	margin-right: 3%;
+}
+.quarter {
+	float: left;
+	width: 23%;
+	margin-right: 3%;
+}
 
