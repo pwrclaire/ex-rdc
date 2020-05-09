@@ -1,1 +1,4 @@
 .DS_Store
+*.map
+css/components
+.sass-cache
