@@ -50,8 +50,8 @@ window.onload = async (event) => {
     const relocate = p['Open to Relocate'] || false;
 
     const avatar = photo && photo.url || 'images/avatar.png';
-    const displayDepartment = department ? `<p>${department}</p>` : '';
-    const displaySuperpower = superpower ? '<p>' + `Superpower: ${superpower}` + '</p>' : '';
+    const displayDepartment = department ? `${department}` : '';
+    const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
     const displayLinkedIn = linkedIn ? `${linkedInLogo}` + `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
     const displayWebsite = website ? `${websiteLogo}` + `<li class="website"><a href=${website} _blank>${website}</a></li>` : '';
     const displayGithub = github ? `${githubLogo}` + `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
@@ -62,13 +62,13 @@ window.onload = async (event) => {
     const displayRelocate = relocate ? `<li class="relocate">Willing to relocate</li>` : '';
 
     return '<article class="card">' +
-      `<figure><img src=${avatar} alt="${name}" /></figure>` +
+      `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
       '<aside>' +
           '<strong>' + `${name}` + '</strong>' +
           '<em>' + `${title}` + '</em>' +
           '<small>' + `${displayCity}` + '</small>' +
-          '<p>' + `${description}` + '</p>' +
-          '<p>' + `${displaySuperpower}` + '</p>'+
+          '<p class="desc">' + `${description}` + '</p>' +
+          '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
           '<ul class="links clearfix">' +
             `${displayLinkedIn}` +
             `${displayWebsite}` + 

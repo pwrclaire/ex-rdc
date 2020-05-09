@@ -40,6 +40,10 @@ strong {
   color: #fff;
 }
 
+.story p {
+  margin-bottom: 1em;
+}
+
 @include device(mobile) {
   .home h1 {
     max-width: 240px;

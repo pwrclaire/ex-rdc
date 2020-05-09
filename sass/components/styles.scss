@@ -21,8 +21,8 @@
 		overflow: hidden;
 		margin-bottom: 1em;
 		float: right;
-		width: 25%;
-		min-height: 80px;
+		width: 100px;
+		height: 100px;
 		margin-left: 1em;
 		background: url(/images/avatar.png) no-repeat;
 		background-size: cover;
@@ -35,6 +35,13 @@
 			display: block;
 			font-size: 1.5em;
 			margin: 0.5em 0;
+		}
+		em {
+			font-style: normal;
+		}
+		.desc,
+		.superpower {
+			font-size: 0.875em;
 		}
 	}
 	.links {
