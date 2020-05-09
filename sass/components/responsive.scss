@@ -22,6 +22,10 @@
 		float: left;
 		width: 47%;
 		margin-right: 3%;
+		min-height: 320px;
+		&:nth-child(even) {
+      margin-right: 0;
+    }
 	}
 }
 
@@ -31,20 +35,14 @@
 	}
 	.card {
 		float: left;
-		width: 30%;
+		width: 31%;
+		margin-right: 3.5%;
+		&:nth-child(even) {
+      margin-right: 3.5%;
+    }
+		&:nth-child(3n+3) {
+      margin-right: 0;
+    }
 	}
-}
-
-
-
-.third {
-	float: left;
-	width: 30%;
-	margin-right: 3%;
-}
-.quarter {
-	float: left;
-	width: 23%;
-	margin-right: 3%;
 }
 

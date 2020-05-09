@@ -2,19 +2,27 @@
 @import "variables";
 
 
+#app {
+	min-height: 500px;
+  background: url(/images/loading.gif) no-repeat 50%;
+  background-size: 80px auto;
+  display: block;
+}
+
 
 .card {
 	box-shadow: 0 0 20px #000;
 	padding: 1em;
 	border-radius: 16px;
 	margin-top: 3em;
+	background: $night;
 	figure {
 		border-radius: 16px;
 		overflow: hidden;
 		margin-bottom: 1em;
 		float: right;
 		width: 25%;
-		min-height: 100px;
+		min-height: 80px;
 		margin-left: 1em;
 		background: url(/images/avatar.png) no-repeat;
 		background-size: cover;
@@ -28,28 +36,10 @@
 			font-size: 1.5em;
 			margin: 0.5em 0;
 		}
-		dt {
-			float: left;
-			background-color: #fff;
-			width: 40px;
-			height: 40px;
-			display: block;
-			border-radius: 4px;
-		  line-height: 40px;
-		  margin-bottom: 1em;
-		  text-align: center;
-		}
-		dd {
-			clear: right;
-			height: 40px;
-			padding-left: 60px;
-		  margin-bottom: 1em;
-		  line-height: 40px;
-		}
 	}
 	.links {
 		list-style: none;
-		margin: 0 0 1em;
+		margin: 0;
 		li {
 			padding: 0;
 			width: 50%;
@@ -84,6 +74,10 @@
 		}
 		.instagram {
 			background-image: url(/images/instagram.png);
+		}
+		.relocate {
+			padding: 10px 0 10px 30px;
+			background-image: url(/images/relocate.png);
 		}
 	}
 }
