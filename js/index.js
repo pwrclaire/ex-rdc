@@ -47,7 +47,7 @@ window.onload = async (event) => {
     const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
     const displayCity = city ? `${city}` : '';
     const displayRemote = remote ? `Open to Remote ` : '';
-    const displayRelocate = relocate ? `<li class="relocate">Willing to relocate</li>` : '';
+    const displayRelocate = relocate ? `<li class="relocate">Would relocate</li>` : '';
 
     return '<article class="card">' +
       `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
