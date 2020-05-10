@@ -2,7 +2,7 @@
 
 #app {
   min-height: 500px;
-  background: url(images/loading.gif) no-repeat 50%;
+  background: url(/images/loading.gif) no-repeat 50%;
   background-size: 80px auto;
   display: block;
 }
@@ -95,23 +95,23 @@
       }
     }
     .github {
-      background-image: url(images/github.png);
+      background-image: url(/images/github.png);
     }
     .linkedin {
-      background-image: url(images/linkedin.png);
+      background-image: url(/images/linkedin.png);
     }
     .twitter {
-      background-image: url(images/twitter.png);
+      background-image: url(/images/twitter.png);
     }
     .website {
-      background-image: url(images/website.png);
+      background-image: url(/images/website.png);
     }
     .instagram {
-      background-image: url(images/instagram.png);
+      background-image: url(/images/instagram.png);
     }
     .relocate {
       padding: 10px 0 10px 30px;
-      background-image: url(images/relocate.png);
+      background-image: url(/images/relocate.png);
     }
   }
 }
