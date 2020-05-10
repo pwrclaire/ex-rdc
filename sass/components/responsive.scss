@@ -21,8 +21,8 @@ body {
 	background: #000;
 	min-height: 100px;
 	margin-top: 2em;
+	padding: 2em 0;
 }
-
 @include device(tablet) {
 	body {
 		background-position: 0 0;
@@ -34,6 +34,9 @@ body {
 	}
 	.site {
 		padding: 2em;
+	}
+	.footer {
+	  padding: 4em 0;
 	}
 	.card {
 		float: left;
