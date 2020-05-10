@@ -65,10 +65,10 @@ window.onload = async (event) => {
       `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
       '<aside>' +
           '<strong>' + `${name}` + '</strong>' +
-          '<em>' + `${title}` + '</em><br/>' +
+          '<em class="truncate">' + `${title}` + '</em>' +
           '<p class="city">' + `${displayCity}` + '</p>' +
-          '<p class="desc">' + `${description}` + '</p>' +
           '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
+          '<p class="desc">' + `${description}` + '</p>' +
           '<ul class="links clearfix">' +
             `${displayLinkedIn}` +
             `${displayWebsite}` + 

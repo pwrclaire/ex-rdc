@@ -9,23 +9,34 @@
   display: block;
 }
 
-
 .card {
-	box-shadow: 0 0 20px #000;
+	box-shadow: 0 4px 12px #1b1b1b;
 	padding: 1em;
 	border-radius: 16px;
-	margin-top: 3em;
-	background: #1b1b1b;
+	margin-top: 1em;
+	background: #000;
 	figure {
 		border-radius: 16px;
 		overflow: hidden;
 		margin-bottom: 1em;
 		float: right;
-		width: 100px;
-		height: 100px;
+		width: 110px;
+		height: 110px;
 		margin-left: 1em;
 		background: url(/images/avatar.png) no-repeat;
 		background-size: cover;
+		img {
+			min-height: 110px;
+			min-width: 110px;
+		}
+	}
+	@include device(tablet) {
+		margin-top: 3em;
+		padding: 1.5em;
+		figure {
+		  width: 130px;
+		  height: 130px;
+		}
 	}
 	aside {
 		p {
@@ -35,15 +46,31 @@
 			display: block;
 			font-size: 1.5em;
 			margin: 0.5em 0;
+			@include device(tablet) {
+				font-size: 1.75em;
+			}
 		}
 		em {
 			font-style: normal;
+			font-weight: bold;
 		}
 		.city,
 		.desc,
 		.superpower {
 			font-size: 0.75em;
 		}
+		.city {
+			margin-bottom: 1.5em;
+		}
+		.desc {
+			max-height: 70px;
+			overflow: hidden;
+		}
+		@include device(tablet) {
+			.desc {
+				max-height: 40px;
+			}
+	  }
 	}
 	.links {
 		list-style: none;
