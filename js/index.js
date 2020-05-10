@@ -20,18 +20,6 @@ window.onload = async (event) => {
   //   return `<option value=${x}>${x}</option>`;
   // }).join('') + '</select>';
 
-  // const linkedInLogo  = '<span class="visuallyhidden">Linked In</span>';
-  // const websiteLogo   = '<span class="visuallyhidden">Website/Folio</span>';
-  // const githubLogo    = '<span class="visuallyhidden">Github</span>';
-  // const twitterLogo   = '<span class="visuallyhidden">Twitter</span>'
-  // const dribbbleLogo  = '<span class="visuallyhidden">Instagram</span>';
-
-  const linkedInLogo  = '';
-  const websiteLogo   = '';
-  const githubLogo    = '';
-  const twitterLogo   = '';
-  const dribbbleLogo  = '';
-
   app.innerHTML = peepData.map((p) => {
     // Formatting column title
     const name = p['Name'];
@@ -52,11 +40,11 @@ window.onload = async (event) => {
     const avatar = photo && photo.url || 'images/avatar.png';
     const displayDepartment = department ? `${department}` : '';
     const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
-    const displayLinkedIn = linkedIn ? `${linkedInLogo}` + `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
-    const displayWebsite = website ? `${websiteLogo}` + `<li class="website"><a href=${website} _blank>${website}</a></li>` : '';
-    const displayGithub = github ? `${githubLogo}` + `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
-    const displayTwitter = twitter ? `${twitterLogo}` + `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
-    const displayDribbble = dribbble ? `${dribbbleLogo}` + `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
+    const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
+    const displayWebsite = website ? `<li class="website"><a href=${website} _blank>${trimUrl(website)}</a></li>` : '';
+    const displayGithub = github ? `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
+    const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
+    const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
     const displayCity = city ? `${city}` : '';
     const displayRemote = remote ? `Open to Remote ` : '';
     const displayRelocate = relocate ? `<li class="relocate">Willing to relocate</li>` : '';
@@ -74,11 +62,18 @@ window.onload = async (event) => {
             `${displayWebsite}` + 
             `${displayGithub}` + 
             `${displayTwitter}` + 
-            //`${displayDribbble}` + 
-            //`${displayRemote}` +
             `${displayRelocate}` +
           '</ul>' +
         '</aside>' +
       '</article>';
   }).join('');
 };
+
+const trimUrl = url => {
+  const newUrl = url.split('//').pop();
+  const haswww = newUrl.indexOf("www.") > -1;
+  const trimwww = newUrl.split('www.').pop();
+  const str = haswww ? trimwww : newUrl;
+  // trim trailing slash 
+  return str;
+}
