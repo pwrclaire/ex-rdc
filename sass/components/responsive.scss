@@ -9,6 +9,7 @@
 
 .wrapper {
 	max-width: 720px;
+	padding: 0 1em 1em;
 }
 
 .footer {
@@ -19,6 +20,10 @@
 }
 
 @include device(tablet) {
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.site {
 		padding: 2em;
 	}

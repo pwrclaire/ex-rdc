@@ -363,6 +363,7 @@ header .site {
 }
 .wrapper {
   max-width: 720px;
+  padding: 0 1em 1em;
 }
 .footer {
   clear: both;
@@ -371,6 +372,10 @@ header .site {
   margin-top: 2em;
 }
 @media (min-width: 768px) {
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .site {
     padding: 2em;
   }
@@ -421,7 +426,7 @@ header .site {
   width: 110px;
   height: 110px;
   margin-left: 1em;
-  background: url("../images/avatar.png") no-repeat;
+  background: url(/images/avatar.png) no-repeat;
   background-size: cover;
 }
 .card figure img {
@@ -498,22 +503,22 @@ header .site {
   font-style: normal;
 }
 .card .links .github {
-  background-image: url(images/github.png);
+  background-image: url(/images/github.png);
 }
 .card .links .linkedin {
-  background-image: url(images/linkedin.png);
+  background-image: url(/images/linkedin.png);
 }
 .card .links .twitter {
-  background-image: url(images/twitter.png);
+  background-image: url(/images/twitter.png);
 }
 .card .links .website {
-  background-image: url(images/website.png);
+  background-image: url(/images/website.png);
 }
 .card .links .instagram {
-  background-image: url(images/instagram.png);
+  background-image: url(/images/instagram.png);
 }
 .card .links .relocate {
   padding: 10px 0 10px 30px;
-  background-image: url(images/relocate.png);
+  background-image: url(/images/relocate.png);
 }
 /*# sourceMappingURL=main.css.map */
