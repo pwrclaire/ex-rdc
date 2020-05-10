@@ -1,6 +1,10 @@
 
 @import "variables";
 
+body {
+	background: #222 url(/images/background.jpg) no-repeat 0 -290px;
+}
+
 .site {
 	max-width: $sitewidth;
 	margin: auto;
@@ -20,6 +24,11 @@
 }
 
 @include device(tablet) {
+	body {
+		background-position: 0 0;
+	  background-size: cover;
+    background-attachment: fixed;
+	}
 	.wrapper {
 		padding-left: 0;
 		padding-right: 0;
