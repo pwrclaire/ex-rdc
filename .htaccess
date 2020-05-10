@@ -1,0 +1,20 @@
+# Prevents the folder from being displayed
+
+RewriteEngine on
+Options All -Indexes
+
+# Error docs
+
+#ErrorDocument 404 /templates/notfound.php
+#ErrorDocument 403 /templates/forbidden.php
+
+# Force SSL
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Cache
+
+#<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|swf)$">
+#  Header set Cache-Control "max-age=84600, public"
+#</filesMatch>
