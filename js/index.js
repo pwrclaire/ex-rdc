@@ -53,10 +53,10 @@ window.onload = async (event) => {
       `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
       '<aside>' +
           '<strong>' + `${name}` + '</strong>' +
-          '<em>' + `${title}` + '</em><br/>' +
+          '<em class="truncate">' + `${title}` + '</em>' +
           '<p class="city">' + `${displayCity}` + '</p>' +
-          '<p class="desc">' + `${description}` + '</p>' +
           '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
+          '<p class="desc">' + `${description}` + '</p>' +
           '<ul class="links clearfix">' +
             `${displayLinkedIn}` +
             `${displayWebsite}` + 
@@ -74,6 +74,5 @@ const trimUrl = url => {
   const haswww = newUrl.indexOf("www.") > -1;
   const trimwww = newUrl.split('www.').pop();
   const str = haswww ? trimwww : newUrl;
-  // trim trailing slash 
-  return str;
+  return str[str.length - 1] === '/' ? str.substr(0, str.length - 1) : str;
 }
