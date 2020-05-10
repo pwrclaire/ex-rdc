@@ -57,7 +57,7 @@ window.onload = async (event) => {
     const displayGithub = github ? `${githubLogo}` + `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
     const displayTwitter = twitter ? `${twitterLogo}` + `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
     const displayDribbble = dribbble ? `${dribbbleLogo}` + `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
-    const displayCity = city ? `<p>${city}</p>\n` : '';
+    const displayCity = city ? `${city}` : '';
     const displayRemote = remote ? `Open to Remote ` : '';
     const displayRelocate = relocate ? `<li class="relocate">Willing to relocate</li>` : '';
 
@@ -65,8 +65,8 @@ window.onload = async (event) => {
       `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
       '<aside>' +
           '<strong>' + `${name}` + '</strong>' +
-          '<em>' + `${title}` + '</em>' +
-          '<small>' + `${displayCity}` + '</small>' +
+          '<em>' + `${title}` + '</em><br/>' +
+          '<p class="city">' + `${displayCity}` + '</p>' +
           '<p class="desc">' + `${description}` + '</p>' +
           '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
           '<ul class="links clearfix">' +
