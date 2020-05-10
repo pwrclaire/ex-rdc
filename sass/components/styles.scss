@@ -86,9 +86,10 @@
         display: inline-block;
         padding: 10px 0 10px 30px;
         font-weight: bold;
+        color: $color-brand;
       }
       a:hover {
-        color: $color-brand;
+        color: #fff;
       }
       em {
         font-style: normal;
@@ -99,6 +100,7 @@
     }
     .linkedin {
       background-image: url(/images/linkedin.png);
+      background-position: 0 7px;
     }
     .twitter {
       background-image: url(/images/twitter.png);
