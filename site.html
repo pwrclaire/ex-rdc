@@ -54,20 +54,65 @@
 
       <header>
         <div class="wrapper">
-          <h1>Coming soon</h1>
+          <h6 class="masked">RDC-EX</h6>
+          <h1>The home for real talent search</h1>
           <p>
             Due to COVID-19, many of our colleagues and friends at realtor.com have been laid off.
             These are all smart, talented and capable people who would be a tremendous asset to your organization.
           </p>
         </div>
 
+        <aside class="nav">
+          <button>Location: <span id="location"></span></button>
+          <button>Role: <span id="role"></span></button>
+          <!-- <checkbox onclick="toggleRelocate()">Relocate?</checkbox> -->
+          <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
+          <label for="relocate">Relocate</label><br>
+
+        </aside>
+
+        <div class="wrapper">
+          <h2>Some of the amazing people impacted</h2>
+
+          <p>Search for talent while you #StayHome.</p>
+        </div>
       </header>
+
+      <div id="dropdown">
+      </div>
+
+      <div id="app"></div>
     </section>
+
+
+    <section class="story clearfix">
+      <div class="site">
+        <div class="wrapper">
+          <h2>So what happened?</h2>
+
+          <p>
+            On the morning of May 5th 2020, realtor.com laid off a number of employees
+            across the United States and Canada.
+          </p>
+          <p>
+            Rather than focusing on that, we want to talk to you about
+            what transpired <em>immediately afterwards</em>.
+            Because that story is so much better than you could imagine...
+          </p>
+          <p>
+            Together, we rise as one. Our story is coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="footer">
     <div class="site">
       <strong>Made with ❤️ by all those impacted.</strong> Stay safe everyone and #StayHome.
+      Inspired by the <a href="https://www.airbnb.com/d/talent">incredible people at Airbnb</a>
     </div>
   </footer>
 
