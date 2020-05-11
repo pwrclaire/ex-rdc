@@ -95,11 +95,11 @@ const displayPeeps = (peeps) => {
       const avatar = photo && photo.url || 'images/avatar.png';
       const displayDepartment = department ? `${department}` : '';
       const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
-      const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
-      const displayWebsite = website ? `<li class="website"><a href=${website} _blank>${trimUrl(website)}</a></li>` : '';
-      const displayGithub = github ? `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
-      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
-      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
+      const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} target="_blank">Linkedin</a></li>` : '';
+      const displayWebsite = website ? `<li class="website"><a href=${website} target="_blank">${trimUrl(website)}</a></li>` : '';
+      const displayGithub = github ? `<li class="github"><a href=${github} target="_blank">Github</a></li>` : '';
+      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} target="_blank">Twitter</a></li>` : '';
+      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank">Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
       const displayRemote = remote ? `Open to Remote ` : '';
       const displayRelocate = relocate ? `<li class="relocate">Would relocate</li>` : '';
