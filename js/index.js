@@ -53,8 +53,9 @@ const trimUrl = url => {
   return str[str.length - 1] === '/' ? str.substr(0, str.length - 1) : str;
 }
 
-const toggleRelocate = () => {
-  filter['Open to Relocate'] === true ? filter['Open to Relocate'] = false : filter['Open to Relocate'] = true;
+const toggleRelocate = () => { // should be check box instead of boolean.
+  // list has 10 people, if willing, show 
+  filter['Open to Relocate'] === true ? delete filter['Open to Relocate'] : filter['Open to Relocate'] = true;
   const people = filtering(everyone);
   displayPeeps(people);
 }

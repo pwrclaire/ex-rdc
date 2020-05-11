@@ -65,7 +65,9 @@
         <aside class="nav">
           <button>Location: <span id="location"></span></button>
           <button>Role: <span id="role"></span></button>
-          <button onclick="toggleRelocate()">Relocate?</button>
+          <!-- <checkbox onclick="toggleRelocate()">Relocate?</checkbox> -->
+          <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
+          <label for="relocate">Relocate</label><br>
 
         </aside>
 
