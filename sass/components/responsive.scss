@@ -22,6 +22,12 @@ body {
 	min-height: 100px;
 	margin-top: 2em;
 	padding: 2em 0;
+	p {
+		margin: 2em 0;
+	}
+	a {
+		border-bottom: 1px dotted #fff;
+	}
 }
 @include device(tablet) {
 	body {
@@ -36,13 +42,13 @@ body {
 		padding: 2em;
 	}
 	.footer {
-	  padding: 6em 0;
+	  padding: 4em 0;
 	}
 	.card {
 		float: left;
 		width: 47%;
 		margin-right: 3%;
-		min-height: 330px;
+		min-height: 333px;
 		&:nth-child(even) {
       margin-right: 0;
     }

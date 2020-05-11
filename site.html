@@ -63,11 +63,19 @@
         </div>
 
         <aside class="nav">
-          <button>Location: <span id="location"></span></button>
-          <button>Role: <span id="role"></span></button>
+          <label>
+            <span class="visuallyhidden">Filter by location:</span>
+            <span id="location"></span>
+          </label>
+          <label>
+            <span class="visuallyhidden">Filter for role:</span>
+            <span id="role"></span>
+          </label>
           <!-- <checkbox onclick="toggleRelocate()">Relocate?</checkbox> -->
-          <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
-          <label for="relocate">Relocate</label><br>
+          <label for="relocate">
+            <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
+            Relocate?
+          </label>
 
         </aside>
 
@@ -111,8 +119,8 @@
 
   <footer class="footer">
     <div class="site">
-      <strong>Made with ❤️ by all those impacted.</strong> Stay safe everyone and #StayHome.
-      Inspired by the <a href="https://www.airbnb.com/d/talent">incredible people at Airbnb</a>
+      <p><strong>Made with ❤️ by all those impacted.</strong> Stay safe everyone and #StayHome.</p>
+      <p><small>Inspired by the <a href="https://www.airbnb.com/d/talent">incredible people at Airbnb</a></small></p>
     </div>
   </footer>
 
