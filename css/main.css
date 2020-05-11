@@ -1,28 +1,7 @@
-/* Congfig vars */
-/* Brand  */
-/* $color-brand:     #FF1493 */
-/* $color-brand:     #E6007A */
-/* Reuse this in many places where we only hide it visually, but still accessible */
-/* Death to 'breakpoints' */
-/* Brand reds */
-/* Shades */
-/* Default blue */
-/* Labels */
-/* My Home */
-/* Reuse this in many places where we only hide it visually, but still accessible */
-/* Death to 'breakpoints' */
-/* HTML5 Boilerplate
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-/* =Reset
--------------------------------------------------------------- */
 hr,
 img {
   border: 0;
 }
-
 a,
 abbr,
 acronym,
@@ -111,15 +90,11 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
 }
-
-/* Body, links, basics */
 html {
   font-size: 16px;
-  /*background: $night url(/img/me-light.jpg) no-repeat 150% 100%;*/
   background-attachment: fixed;
   background-size: 70%;
 }
-
 body {
   font-size: 1em;
   font-family: Helvetica, Arial, sans-serif;
@@ -127,26 +102,13 @@ body {
   height: 100%;
   background: #222;
 }
-
 a {
   color: #eee;
 }
-
-/* Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
-
-/* A better looking default horizontal rule
- */
 hr {
   display: block;
   height: 1px;
@@ -155,11 +117,6 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-
-/* Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 audio,
 canvas,
 iframe,
@@ -169,32 +126,23 @@ video {
   vertical-align: middle;
   border: none;
 }
-
-/* Remove default fieldset styles.
- */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
-/* Allow only vertical resizing of textareas.
- */
 textarea {
   resize: vertical;
 }
-
 html,
 body {
   margin: 0;
   height: 100%;
 }
-
 figure {
   margin: 0;
   padding: 0;
 }
-
 header,
 section,
 footer,
@@ -205,23 +153,12 @@ article,
 figure {
   display: block;
 }
-
 ::placeholder {
   color: #ccc;
 }
-
-/* ==========================================================================
- * Helper classes
- * ========================================================================== */
-/* Hide visually and from screen readers
- */
 .hidden {
   display: none !important;
 }
-
-/* Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -234,11 +171,6 @@ figure {
   width: 1px;
   white-space: nowrap;
 }
-
-/* Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -250,210 +182,145 @@ figure {
   width: auto;
   white-space: inherit;
 }
-
-/* Hide visually and from screen readers, but maintain layout
- */
 .invisible {
   visibility: hidden;
 }
-
-/* Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 .clearboth {
   clear: both;
   height: 0;
   border: none;
   margin: 0;
 }
-
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
-
 .clearfix:after {
   clear: both;
 }
-
-/* Truncate single line of text */
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
 }
-
-/* Display a list in a row with no styling */
 .list-inline {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .list-inline li {
   display: inline;
 }
-
-/* ==========================================================================
- * Print styles.
- * Inlined to avoid the additional HTTP request:
- * http://www.phpied.com/delay-loading-your-print-css/
- * ========================================================================== */
 @media print {
   *,
-*:before,
-*:after {
+  *:before,
+  *:after {
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
-
   a,
-a:visited {
+  a:visited {
     text-decoration: underline;
   }
-
   a[href]:after {
     content: " (" attr(href) ")";
   }
-
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-
-  /* Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
   a[href^="#"]:after,
-a[href^="javascript:"]:after {
+  a[href^="javascript:"]:after {
     content: "";
   }
-
   pre {
     white-space: pre-wrap !important;
   }
-
   pre,
-blockquote {
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-
-  /* Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
   thead {
     display: table-header-group;
   }
-
   tr,
-img {
+  img {
     page-break-inside: avoid;
   }
-
   p,
-h2,
-h3 {
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
-
   h2,
-h3 {
+  h3 {
     page-break-after: avoid;
   }
 }
-/*# sourceMappingURL=base.css.map */
-/* Congfig vars */
-/* Brand  */
-/* $color-brand:     #FF1493 */
-/* $color-brand:     #E6007A */
-/* Reuse this in many places where we only hide it visually, but still accessible */
-/* Death to 'breakpoints' */
-/* =Basic structure
--------------------------------------------------------------- */
 h1,
 h2,
 h3,
 h4 {
   color: #eee;
 }
-
 h1 {
   font-size: 2em;
   line-height: 1.1;
   margin-bottom: 0.6em;
-  color: #EF5E5E;
+  color: #ef5e5e;
 }
-
 h2 {
   margin: 1.5em 0 0.75em;
   font-size: 1.25em;
   line-height: 1.2;
   font-weight: bold;
 }
-
 h3 {
   margin: 1.75em 0 1em;
   font-size: 1.5em;
   line-height: 1.25;
 }
-
 h4 {
   margin: 0 0 0.75em;
   font-size: 1.2em;
   line-height: 1.2;
 }
-
 ul,
 ol,
 p {
   color: #aaa;
 }
-
 strong {
   color: #fff;
 }
-
 .story p {
   margin-bottom: 1em;
 }
-
 @media (min-width: 400px) {
   h1 {
     font-size: 2.5em;
   }
 }
-/* Landscape tablet + smaller desktop devices */
 @media (min-width: 768px) {
   h1 {
     font-size: 3em;
     margin-bottom: 0.3em;
   }
-
   h2 {
     font-size: 2em;
   }
-
   h3 {
     font-size: 1.75em;
   }
-
   h4 {
     font-size: 1.25em;
   }
 }
-/* Landscape tablet + smaller desktop devices */
 @media (min-width: 1024px) {
   h1 {
     font-size: 4em;
@@ -462,31 +329,26 @@ strong {
 a {
   text-decoration: none;
 }
-
 img {
   width: 100%;
   height: auto;
 }
-
 header {
-  padding-bottom: 1em;
+  padding-bottom: 0;
 }
 header .site {
   padding-top: 1.75em;
-  /* Landscape tablet + smaller desktop devices */
 }
 @media (min-width: 480px) {
   header .site {
     padding-top: 4em;
   }
 }
-
 .darklogo {
   display: none;
 }
-
 .masked {
-  background-color: #EF5E5E;
+  background-color: #ef5e5e;
   border-radius: 2px;
   padding: 4px 6px;
   color: #111;
@@ -494,28 +356,18 @@ header .site {
   margin-bottom: 2em;
   font-size: 10px;
 }
-
-/* Congfig vars */
-/* Brand  */
-/* $color-brand:     #FF1493 */
-/* $color-brand:     #E6007A */
-/* Reuse this in many places where we only hide it visually, but still accessible */
-/* Death to 'breakpoints' */
 body {
   background: #222 url(/images/background.jpg) no-repeat 0 -290px;
 }
-
 .site {
   max-width: 1400px;
   margin: auto;
   padding: 1em;
 }
-
 .wrapper {
   max-width: 720px;
   padding: 0 1em 1em;
 }
-
 .footer {
   clear: both;
   background: #000;
@@ -523,27 +375,21 @@ body {
   margin-top: 2em;
   padding: 2em 0;
 }
-
-/* Landscape tablet + smaller desktop devices */
 @media (min-width: 768px) {
   body {
     background-position: 0 0;
     background-size: cover;
     background-attachment: fixed;
   }
-
   .wrapper {
     padding: 0;
   }
-
   .site {
     padding: 2em;
   }
-
   .footer {
-    padding: 4em 0;
+    padding: 6em 0;
   }
-
   .card {
     float: left;
     width: 47%;
@@ -554,12 +400,10 @@ body {
     margin-right: 0;
   }
 }
-/* Landscape tablet + smaller desktop devices */
 @media (min-width: 1024px) {
   .site {
     padding: 2em;
   }
-
   .card {
     float: left;
     width: 31%;
@@ -568,33 +412,23 @@ body {
   .card:nth-child(even) {
     margin-right: 3.5%;
   }
-  .card:nth-child(3n+3) {
+  .card:nth-child(3n + 3) {
     margin-right: 0;
   }
 }
-/* Congfig vars */
-/* Brand  */
-/* $color-brand:     #FF1493 */
-/* $color-brand:     #E6007A */
-/* Reuse this in many places where we only hide it visually, but still accessible */
-/* Death to 'breakpoints' */
 #app {
   min-height: 500px;
   background: url(/images/loading.gif) no-repeat 50%;
   background-size: 80px auto;
   display: block;
 }
-
-.nav {
-  /* Landscape tablet + smaller desktop devices */
-}
 .nav button {
   background-color: transparent;
-  border: 2px solid #EF5E5E;
+  border: 2px solid #ef5e5e;
   padding: 10px 20px;
   border-radius: 50px;
   margin-left: 1em;
-  color: #EF5E5E;
+  color: #ef5e5e;
 }
 @media (min-width: 768px) {
   .nav {
@@ -604,14 +438,12 @@ body {
     font-size: 16px;
   }
 }
-
 .card {
   box-shadow: 0 4px 12px #1b1b1b;
   padding: 1em;
   border-radius: 16px;
   margin-top: 1em;
   background: #000;
-  /* Landscape tablet + smaller desktop devices */
 }
 .card figure {
   border-radius: 16px;
@@ -638,9 +470,6 @@ body {
     height: 130px;
   }
 }
-.card aside {
-  /* Landscape tablet + smaller desktop devices */
-}
 .card aside p {
   margin-bottom: 1em;
 }
@@ -648,7 +477,6 @@ body {
   display: block;
   font-size: 1.5em;
   margin: 0.5em 0;
-  /* Landscape tablet + smaller desktop devices */
 }
 @media (min-width: 768px) {
   .card aside strong {
@@ -694,7 +522,7 @@ body {
   display: inline-block;
   padding: 10px 0 10px 30px;
   font-weight: bold;
-  color: #EF5E5E;
+  color: #ef5e5e;
 }
 .card .links li a:hover {
   color: #fff;
@@ -722,5 +550,4 @@ body {
   padding: 10px 0 10px 30px;
   background-image: url(/images/relocate.png);
 }
-
 /*# sourceMappingURL=main.css.map */
