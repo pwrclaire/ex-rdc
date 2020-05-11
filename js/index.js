@@ -102,7 +102,7 @@ const displayPeeps = (peeps) => {
       const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank">Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
       const displayRemote = remote ? `Open to Remote ` : '';
-      const displayRelocate = relocate ? `<span class="relocate">Would relocate</span>` : '';
+      const displayRelocate = relocate ? `<span class="relocate">Can relocate</span>` : '';
 
       return '<article class="card">' +
         `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
