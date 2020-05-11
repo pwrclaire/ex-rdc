@@ -10,7 +10,7 @@
 .nav {
   padding: 1em 1em 0;
   label {
-    padding: 12px;
+    padding: 14px 12px;
     background-color: transparent;
     width: 30%;
     display: inline-block;
@@ -60,7 +60,7 @@
   @include device(mobile) {
     padding: 0;
     position: fixed;
-    bottom: 20px;
+    bottom: 24px;
     left: 0;
     width: 100%;
     .container {
@@ -68,6 +68,7 @@
       border-radius: 40px;
       max-width: 300px;
       margin: auto;
+      padding: 4px 0;
       select,
       label {
         color: #fff;
