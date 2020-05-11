@@ -1,72 +1,48 @@
+let everyone = [];
 window.onload = async (event) => {
-  let data = await fetch('https://api.airtable.com/v0/appxC7V0yEcK1fZ7i/Profiles?api_key=keyanhJEYpK5VlhXz')
+  let data = await fetch(`https://api.airtable.com/v0/appxC7V0yEcK1fZ7i/Profiles?api_key=keyanhJEYpK5VlhXz`)
     .then(resp => resp.json())
     .then(d => d);
 
-  // const departmentList = await fetch('https://api.airtable.com/v0/appxC7V0yEcK1fZ7i/Profiles?api_key=keyanhJEYpK5VlhXz&fields%5B%5D=Department')
-  //   .then(resp => resp.json())
-  //   .then(d => d.records.map(x => x.fields).map(x => x.Department));
+  const peeps = data.records
+  let allPeeps = peeps.map(x => x.fields);
+  allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
+  everyone = allPeeps;
+  const locationList = ['All', ...new Set(allPeeps.map(x => x['Current City']))];
+  const deptList = ['All', ...new Set(allPeeps.map(x => x['Department']))];
 
-  // const deptDropdown = [...new Set(departmentList)]; 
-  // console.log([deptDropdown])
+  displayPeeps(allPeeps);
 
-  const peeps = data.records;
-  const peepData = peeps.map(x => x.fields);
-  
-  const app = document.querySelector('#app');
-  // const dropdown = document.querySelector('#dropdown');
+  const locationDropdown = document.querySelector('#location');
 
-  // dropdown.innerHTML = '<select id="color-select" name="color">' + deptDropdown.map(x => {
-  //   return `<option value=${x}>${x}</option>`;
-  // }).join('') + '</select>';
+  locationDropdown.innerHTML = `<select id="locationDropdown" onchange='selectLocation()'>` +
+    locationList.map(x => {
+        return `<option value='${x}'>${x}</option>`
+      }).join('') + 
+  '</select>';
 
-  app.innerHTML = peepData.map((p) => {
-    // Formatting column title
-    const name = p['Name'];
-    const title = p['Former Title'];
-    const department = p['Department'];
-    const description = p['A Tweet Length Blurb About You'] || [];
-    const superpower = p['Your Top 3 Professional Super Power'] || null;
-    const photo = p['Your Profile Photo'] && p['Your Profile Photo'][0]['thumbnails'].large || [];
-    const linkedIn = p['LinkedIn Profile'] || null;
-    const website = p['Your Website URL'] || null;
-    const github = p['Github URL'] || null;
-    const dribbble = p['Dribbble URL'] || null;
-    const twitter = p['Twitter URL'] || null;
-    const city = p['Current City'] || null;
-    const remote = p['Open to Remote'] || false;
-    const relocate = p['Open to Relocate'] || false;
+  const roleDropdown = document.querySelector('#role');
+  roleDropdown.innerHTML = `<select id="roleDropdown" onchange='selectRole()'>` +
+    deptList.map(x => {
+        return `<option value='${x}'>${x}</option>`
+      }).join('') + 
+  '</select>';
+};
 
-    const avatar = photo && photo.url || 'images/avatar.png';
-    const displayDepartment = department ? `${department}` : '';
-    const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
-    const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
-    const displayWebsite = website ? `<li class="website"><a href=${website} _blank>${trimUrl(website)}</a></li>` : '';
-    const displayGithub = github ? `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
-    const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
-    const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
-    const displayCity = city ? `${city}` : '';
-    const displayRemote = remote ? `Open to Remote ` : '';
-    const displayRelocate = relocate ? `<li class="relocate">Would relocate</li>` : '';
+const filter = {};
 
-    return '<article class="card">' +
-      `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
-      '<aside>' +
-          '<strong>' + `${name}` + '</strong>' +
-          '<em class="truncate">' + `${title}` + '</em>' +
-          '<p class="city">' + `${displayCity}` + '</p>' +
-          '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
-          '<p class="desc">' + `${description}` + '</p>' +
-          '<ul class="links clearfix">' +
-            `${displayLinkedIn}` +
-            `${displayWebsite}` + 
-            `${displayGithub}` + 
-            `${displayTwitter}` + 
-            `${displayRelocate}` +
-          '</ul>' +
-        '</aside>' +
-      '</article>';
-  }).join('');
+const selectLocation = (e) => {
+  const val = document.getElementById('locationDropdown').value;
+  val === 'All' ? delete filter['Current City'] : filter['Current City'] = val;
+  const people = filtering(everyone);
+  displayPeeps(people);
+};
+
+const selectRole = () => {
+  const val = document.getElementById('roleDropdown').value;
+  val === 'All' ? delete filter['Department'] : filter['Department'] = val;
+  const people = filtering(everyone);
+  displayPeeps(people);
 };
 
 const trimUrl = url => {
@@ -75,4 +51,77 @@ const trimUrl = url => {
   const trimwww = newUrl.split('www.').pop();
   const str = haswww ? trimwww : newUrl;
   return str[str.length - 1] === '/' ? str.substr(0, str.length - 1) : str;
+}
+
+const toggleRelocate = () => {
+  filter['Open to Relocate'] === true ? filter['Open to Relocate'] = false : filter['Open to Relocate'] = true;
+  const people = filtering(everyone);
+  displayPeeps(people);
+}
+
+const filtering = (peeps) => {
+  peeps = peeps.filter(peep => {
+    for (let key in filter) {
+      if (peep[key] != filter[key]) {
+        return false
+      }
+    }
+    return true;
+  });
+  return peeps;
+}
+
+const displayPeeps = (peeps) => {
+  const app = document.querySelector('#app');
+  if (peeps.length > 0) {
+    app.innerHTML = peeps.map((p) => {
+      // Formatting column title
+      const name = p['Name'];
+      const title = p['Former Title'];
+      const department = p['Department'];
+      const description = p['A Tweet Length Blurb About You'] || [];
+      const superpower = p['Your Top 3 Professional Super Power'] || null;
+      const photo = p['Your Profile Photo'] && p['Your Profile Photo'][0]['thumbnails'].large || [];
+      const linkedIn = p['LinkedIn Profile'] || null;
+      const website = p['Your Website URL'] || null;
+      const github = p['Github URL'] || null;
+      const dribbble = p['Dribbble URL'] || null;
+      const twitter = p['Twitter URL'] || null;
+      const city = p['Current City'] || null;
+      const remote = p['Open to Remote'] || false;
+      const relocate = p['Open to Relocate'] || false;
+
+      const avatar = photo && photo.url || 'images/avatar.png';
+      const displayDepartment = department ? `${department}` : '';
+      const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
+      const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} _blank>Linkedin</a></li>` : '';
+      const displayWebsite = website ? `<li class="website"><a href=${website} _blank>${trimUrl(website)}</a></li>` : '';
+      const displayGithub = github ? `<li class="github"><a href=${github} _blank>Github</a></li>` : '';
+      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} _blank>Twitter</a></li>` : '';
+      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} _blank>Dribbble</a></li>` : '';
+      const displayCity = city ? `${city}` : '';
+      const displayRemote = remote ? `Open to Remote ` : '';
+      const displayRelocate = relocate ? `<li class="relocate">Would relocate</li>` : '';
+
+      return '<article class="card">' +
+        `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
+        '<aside>' +
+            '<strong>' + `${name}` + '</strong>' +
+            '<em class="truncate">' + `${title}` + '</em>' +
+            '<p class="city">' + `${displayCity}` + '</p>' +
+            '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
+            '<p class="desc">' + `${description}` + '</p>' +
+            '<ul class="links clearfix">' +
+              `${displayLinkedIn}` +
+              `${displayWebsite}` + 
+              `${displayGithub}` + 
+              `${displayTwitter}` + 
+              `${displayRelocate}` +
+            '</ul>' +
+          '</aside>' +
+        '</article>';
+    }).join('');
+  } else {
+    app.innerHTML = `<h3> Yay, no one was laid off for this selection</h3>`;
+  }
 }

@@ -39,11 +39,11 @@
   </script>
   <script src="js/index.js"></script>
 
-  <body class="home ">
-    <ul class="visuallyhidden">
-      <li><a href="#main-nav" title="Go directly to the website navigation">skip to Main Navigation</a></li>
-      <li><a href="#main-content" title="Go directly to main content">skip to Content</a></li>
-    </ul>
+<body class="home ">
+  <ul class="visuallyhidden">
+    <li><a href="#main-nav" title="Go directly to the website navigation">skip to Main Navigation</a></li>
+    <li><a href="#main-content" title="Go directly to main content">skip to Content</a></li>
+  </ul>
 
   <header role="banner" class="header">
 
@@ -63,12 +63,11 @@
         </div>
 
         <aside class="nav">
-          <button>Location</button>
-          <button>Role</button>
-          <button>Relocate?</button>
+          <button>Location: <span id="location"></span></button>
+          <button>Role: <span id="role"></span></button>
+          <button onclick="toggleRelocate()">Relocate?</button>
 
         </aside>
-
 
         <div class="wrapper">
           <h2>All the amazing people impacted</h2>
@@ -94,7 +93,8 @@
             across the United States and Canada.
           </p>
           <p>
-            Rather than focusing on that, we want to talk to you about what transpired <em>immediately afterwards</em>. Because that story is so much better than you could imagine...
+            Rather than focusing on that, we want to talk to you about what transpired <em>immediately afterwards</em>.
+            Because that story is so much better than you could imagine...
           </p>
           <p>
             Together, we rise as one. Our story is coming soon.
