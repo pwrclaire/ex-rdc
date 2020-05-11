@@ -84,20 +84,6 @@ img {
   height: auto;
 }
 
-header {
-  padding-top: 2em;
-  .site {
-    padding-top: 1.75em;
-    @include device(phablet) {
-      padding-top: 4em;
-    }
-  }
-}
-
-.darklogo {
-  display: none;
-}
-
 .masked {
   background-color: $color-brand;
   border-radius: 2px;

@@ -11,6 +11,14 @@ body {
 	padding: 1em;
 }
 
+header {
+  padding-top: 2em;
+  @include device(phablet) {
+    padding-top: 1em;
+  }
+}
+
+
 .wrapper {
 	max-width: 720px;
 	padding: 0 1em 1em;
