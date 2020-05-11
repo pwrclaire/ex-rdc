@@ -10,12 +10,8 @@
 .nav {
   padding: 1em 1em 0;
   label {
+    padding: 12px;
     background-color: transparent;
-    border: 2px solid $color-brand;
-    padding: 10px;
-    border-radius: 50px;
-    font-size: 1em;
-    color: $color-brand;
     width: 30%;
     display: inline-block;
     box-sizing: border-box;
@@ -31,6 +27,8 @@
       width: 20px;
       margin: 0 4px 0 0;
       float: left;
+      border-radius: 3px;
+      border: none;
     }
   }
   .relocate {
@@ -44,6 +42,10 @@
     float: right;
     padding: 0;
     label {
+      border: 2px solid $color-brand;
+      border-radius: 50px;
+      font-size: 1em;
+      color: $color-brand;
       margin-left: 1em;
       width: auto;
       padding: 10px 20px;
@@ -52,6 +54,23 @@
       width: auto;
       span {
         font-size: 1em;
+      }
+    }
+  }
+  @include device(mobile) {
+    padding: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    .container {
+      background: $color-brand;
+      border-radius: 40px;
+      max-width: 300px;
+      margin: auto;
+      select,
+      label {
+        color: #fff;
       }
     }
   }
