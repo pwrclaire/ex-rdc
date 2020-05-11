@@ -121,14 +121,27 @@
     em {
       font-style: normal;
       font-weight: bold;
+      margin-bottom: 0.25em;
+      display: block;
     }
-    .city,
     .desc,
     .superpower {
       font-size: 0.75em;
     }
     .city {
-      margin-bottom: 1.5em;
+      margin-bottom: 10px;
+      font-size: 0.875em;
+    }
+    .relocate {
+      background: url(/images/relocate.png) no-repeat 3px 50%;
+      background-size: 10px auto;
+      font-size: 11px;
+      display: inline-block;
+      margin: 0 0 1em 6px;
+      background-color: $color-brand;
+      border-radius: 2px;
+      padding: 2px 4px 2px 16px;
+      color: #fff;
     }
     .desc {
       max-height: 70px;
@@ -181,9 +194,8 @@
     .instagram {
       background-image: url(/images/instagram.png);
     }
-    .relocate {
-      padding: 10px 0 10px 30px;
-      background-image: url(/images/relocate.png);
-    }
   }
 }
+
+
+

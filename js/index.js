@@ -102,14 +102,14 @@ const displayPeeps = (peeps) => {
       const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank">Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
       const displayRemote = remote ? `Open to Remote ` : '';
-      const displayRelocate = relocate ? `<li class="relocate">Would relocate</li>` : '';
+      const displayRelocate = relocate ? `<span class="relocate">Would relocate</span>` : '';
 
       return '<article class="card">' +
         `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
         '<aside>' +
             '<strong>' + `${name}` + '</strong>' +
-            '<em class="truncate">' + `${title}` + '</em>' +
-            '<p class="city">' + `${displayCity}` + '</p>' +
+            '<em>' + `${title}` + '</em>' +
+            '<p class="city">' + `${displayCity}` + `${displayRelocate}` + '</p>' +
             '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
             '<p class="desc">' + `${description}` + '</p>' +
             '<ul class="links clearfix">' +
@@ -117,7 +117,6 @@ const displayPeeps = (peeps) => {
               `${displayWebsite}` + 
               `${displayGithub}` + 
               `${displayTwitter}` + 
-              `${displayRelocate}` +
             '</ul>' +
           '</aside>' +
         '</article>';
