@@ -1,10 +1,8 @@
 let everyone = [];
 window.onload = async (event) => {
-  let data = await fetch(`https://api.airtable.com/v0/appxC7V0yEcK1fZ7i/Profiles?api_key=keyanhJEYpK5VlhXz`)
+  const peeps = await fetch('http://ex-rdc-server.herokuapp.com/profiles')
     .then(resp => resp.json())
     .then(d => d);
-
-  const peeps = data.records
   let allPeeps = peeps.map(x => x.fields);
   allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
   everyone = allPeeps;
