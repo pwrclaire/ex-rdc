@@ -1,10 +1,10 @@
 let everyone = [];
 window.onload = async (event) => {
-  const peeps = await fetch('http://ex-rdc-server.herokuapp.com/profiles')
+  const peeps = await fetch('https://ex-rdc-server.herokuapp.com/profiles')
     .then(resp => resp.json())
     .then(d => d);
-  let allPeeps = peeps.map(x => x.fields);
-  allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
+  let allPeeps = shuffle(peeps.map(x => x.fields));
+  // allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
   everyone = allPeeps;
   const locationList = ['All Locations', ...new Set(allPeeps.map(x => x['Current City']))];
   const deptList = ['All Roles', ...new Set(allPeeps.map(x => x['Department']))];
@@ -123,3 +123,5 @@ const displayPeeps = (peeps) => {
     app.innerHTML = `<h3> Yay, no one was laid off for this selection</h3>`;
   }
 }
+
+const shuffle = arr => arr.sort(() => Math.random() - 0.5);
