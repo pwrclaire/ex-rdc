@@ -6,8 +6,8 @@ window.onload = async (event) => {
   let allPeeps = peeps.map(x => x.fields);
   allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
   everyone = allPeeps;
-  const locationList = ['All', ...new Set(allPeeps.map(x => x['Current City']))];
-  const deptList = ['All', ...new Set(allPeeps.map(x => x['Department']))];
+  const locationList = ['All Locations', ...new Set(allPeeps.map(x => x['Current City']))];
+  const deptList = ['All Roles', ...new Set(allPeeps.map(x => x['Department']))];
 
   displayPeeps(allPeeps);
 
@@ -31,14 +31,14 @@ const filter = {};
 
 const selectLocation = (e) => {
   const val = document.getElementById('locationDropdown').value;
-  val === 'All' ? delete filter['Current City'] : filter['Current City'] = val;
+  val === 'All Locations' ? delete filter['Current City'] : filter['Current City'] = val;
   const people = filtering(everyone);
   displayPeeps(people);
 };
 
 const selectRole = () => {
   const val = document.getElementById('roleDropdown').value;
-  val === 'All' ? delete filter['Department'] : filter['Department'] = val;
+  val === 'All Roles' ? delete filter['Department'] : filter['Department'] = val;
   const people = filtering(everyone);
   displayPeeps(people);
 };
