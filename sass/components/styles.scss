@@ -10,7 +10,6 @@
 .nav {
   padding: 1em 1em 0;
   label {
-    padding: 14px 12px;
     background-color: transparent;
     width: 30%;
     display: inline-block;
@@ -18,9 +17,10 @@
     select {
       -webkit-appearance: none;
       background: transparent;
-      font-size: 1em;
+      font-size: 14px;
       border: none;
       color: $color-brand;
+      padding: 14px 12px;
     }
     input[type="checkbox"] {
       height: 20px;
@@ -34,7 +34,7 @@
   .relocate {
     width: 36%;
     span {
-      font-size: 13px;
+      font-size: 14px;
       display: inline;
     }
   }
@@ -48,12 +48,21 @@
       color: $color-brand;
       margin-left: 1em;
       width: auto;
-      padding: 10px 20px;
+      float: left;
+      padding-left: 10px;
+      max-width: 200px;
+    }
+    select {
+      font-size: 16px;
     }
     .relocate {
+      padding: 13px 20px;
       width: auto;
       span {
         font-size: 1em;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -66,8 +75,7 @@
     .container {
       background: $color-brand;
       border-radius: 40px;
-      max-width: 320px;
-      margin: auto;
+      margin: 0 2em;
       padding: 4px 0;
       select,
       label {
