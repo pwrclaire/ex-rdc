@@ -4,7 +4,6 @@ window.onload = async (event) => {
     .then(resp => resp.json())
     .then(d => d);
   let allPeeps = shuffle(peeps.map(x => x.fields));
-  // allPeeps.forEach(x => !x.hasOwnProperty('Open to Relocate') ? x['Open to Relocate'] = false : null);
   everyone = allPeeps;
   const locationList = ['All Locations', ...new Set(allPeeps.map(x => x['Current City']))];
   const deptList = ['All Roles', ...new Set(allPeeps.map(x => x['Department']))];
@@ -71,6 +70,7 @@ const filtering = (peeps) => {
 }
 
 const displayPeeps = (peeps) => {
+  window.scrollTo(0, 0);
   const app = document.querySelector('#app');
   if (peeps.length > 0) {
     app.innerHTML = peeps.map((p) => {
