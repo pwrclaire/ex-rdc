@@ -109,7 +109,7 @@ const displayPeeps = (peeps) => {
         '<aside>' +
             '<strong>' + `${name}` + '</strong>' +
             '<em>' + `${title}` + '</em>' +
-            '<p class="city">' + `${displayCity}` + `${displayRelocate}` + '</p>' +
+            '<p class="city">' + `${displayCity}` + '&nbsp;' + `${displayRelocate}` + '</p>' +
             '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
             '<p class="desc">' + `${description}` + '</p>' +
             '<ul class="links clearfix">' +
