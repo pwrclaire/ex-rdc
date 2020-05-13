@@ -17,24 +17,25 @@
     select {
       -webkit-appearance: none;
       background: transparent;
-      font-size: 14px;
+      font-size: 13px;
       border: none;
       color: $color-brand;
-      padding: 14px 12px;
+      padding: 14px 12px 14px 20px;
     }
     input[type="checkbox"] {
-      height: 20px;
-      width: 20px;
+      height: 18px;
+      width: 18px;
       margin: 0 4px 0 0;
       float: left;
       border-radius: 3px;
       border: none;
+      box-shadow: none;
     }
   }
   .relocate {
     width: 36%;
     span {
-      font-size: 14px;
+      font-size: 13px;
       display: inline;
     }
   }
@@ -77,16 +78,17 @@
       border-radius: 40px;
       margin: 0 2em;
       padding: 4px 0;
+      box-shadow: 0 0 20px #000;
       select,
       label {
         color: #fff;
+        min-height: 28px;
       }
     }
   }
 }
 
 .card {
-  position: relative;
   box-shadow: 0 4px 12px #1b1b1b;
   padding: 1em;
   border-radius: 16px;
@@ -122,7 +124,7 @@
     strong {
       display: block;
       font-size: 1.5em;
-      margin: 0.75em 0 0.5em;
+      margin: 0.5em 0;
       @include device(tablet) {
         font-size: 1.75em;
       }
@@ -144,22 +146,17 @@
     .relocate {
       background: url(/images/relocate.png) no-repeat 3px 50%;
       background-size: 10px auto;
-      font-size: 10px;
+      font-size: 9px;
       display: inline-block;
       margin: 0 0 1em 6px;
       background-color: $color-brand;
       border-radius: 2px;
       padding: 2px 4px 1px 16px;
-      color: #000;
+      color: #fff;
       text-transform: uppercase;
       /* Remove the background */
       background: $color-brand;
-      margin-bottom: 0;
       padding-left: 4px;
-      font-weight: bold;
-      position: absolute;
-      top: 20px;
-      left: 18px;
     }
     .desc {
       max-height: 70px;
