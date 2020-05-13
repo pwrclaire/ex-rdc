@@ -70,7 +70,9 @@ const filtering = (peeps) => {
 }
 
 const displayPeeps = (peeps) => {
-  window.scrollTo(0, 0);
+  if (window.innerWidth <= 440) {
+    window.scrollTo(0, 0);
+  }
   const app = document.querySelector('#app');
   if (peeps.length > 0) {
     app.innerHTML = peeps.map((p) => {
