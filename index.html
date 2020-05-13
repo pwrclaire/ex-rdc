@@ -54,20 +54,80 @@
 
       <header>
         <div class="wrapper">
-          <h1>Coming soon</h1>
+          <h6 class="masked">RDC-EX</h6>
+          <h1>The home for real talent search</h1>
           <p>
             Due to COVID-19, many of our colleagues and friends at realtor.com have been laid off.
             These are all smart, talented and capable people who would be a tremendous asset to your organization.
           </p>
         </div>
 
+        <aside class="nav">
+          <div class="container">
+            <label>
+              <span class="visuallyhidden">Filter by location:</span>
+              <span id="location"></span>
+            </label>
+            <label>
+              <span class="visuallyhidden">Filter for role:</span>
+              <span id="role"></span>
+            </label>
+            <!-- <checkbox onclick="toggleRelocate()">Relocate?</checkbox> -->
+            <label for="relocate" class="relocate">
+              <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
+              <span>Relocate?</span>
+            </label>
+          </div>
+
+        </aside>
+
+        <div class="wrapper">
+          <h2>Some of the amazing people impacted</h2>
+
+          <p>Search for talent while you #StayHome.</p>
+        </div>
       </header>
+
+      <div id="dropdown">
+      </div>
+
+      <div id="app"></div>
     </section>
+
+
+    <section class="story clearfix">
+      <div class="site">
+        <div class="wrapper">
+          <h2>So what happened?</h2>
+
+          <p>
+            On the morning of May 5th 2020, realtor.com laid off a number of employees
+            across the United States and Canada.
+          </p>
+          <p>
+            Rather than focusing on that, we want to talk to you about
+            what transpired <em>immediately afterwards</em>.
+            Because that story is so much better than you could imagine...
+          </p>
+          <p>
+            Together, we rise as one. Our story is coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="footer">
     <div class="site">
-      <strong>Made with ❤️ by all those impacted.</strong> Stay safe everyone and #StayHome.
+      <p><strong>Made with ❤️ by all those impacted.</strong> Stay safe everyone and #StayHome.</p>
+      <p>
+        <small>
+          Inspired by the <a href="https://www.airbnb.com/d/talent">incredible people at Airbnb</a>.
+          Thanks to Twitter for the gender neutral avatar.
+        </small>
+      </p>
     </div>
   </footer>
 
