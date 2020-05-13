@@ -105,9 +105,10 @@ const displayPeeps = (peeps) => {
       return '<article class="card">' +
         `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
         '<aside>' +
+            `${displayRelocate}` +
             '<strong>' + `${name}` + '</strong>' +
             '<em>' + `${title}` + '</em>' +
-            '<p class="city">' + `${displayCity}` + `${displayRelocate}` + '</p>' +
+            '<p class="city">' + `${displayCity}` + '</p>' +
             '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
             '<p class="desc">' + `${description}` + '</p>' +
             '<ul class="links clearfix">' +
