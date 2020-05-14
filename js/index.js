@@ -5,10 +5,23 @@ window.onload = async (event) => {
     .then(d => d);
   let allPeeps = shuffle(peeps.map(x => x.fields));
   everyone = allPeeps;
+
   const locationList = ['All Locations', ...new Set(allPeeps.map(x => x['Current City']))];
   const deptList = ['All Roles', ...new Set(allPeeps.map(x => x['Department']))];
 
-  displayPeeps(allPeeps);
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('role');
+  if (myParam) { 
+    if (deptList.includes(capitalize(myParam))) {
+      filter['Department'] = capitalize(myParam)
+    } else {
+      window.history.replaceState(null, null, '/');
+    }
+    const people = filtering(allPeeps);
+    displayPeeps(people);
+  } else {
+    displayPeeps(allPeeps);
+  }
 
   const locationDropdown = document.querySelector('#location');
 
@@ -21,8 +34,8 @@ window.onload = async (event) => {
   const roleDropdown = document.querySelector('#role');
   roleDropdown.innerHTML = `<select id="roleDropdown" onchange='selectRole()'>` +
     deptList.map(x => {
-        return `<option value='${x}'>${x}</option>`
-      }).join('') + 
+        return `<option value='${x}' ${x === filter.Department ? 'selected' : ''}>${x}</option>` // '${x === filter.Department}'
+      }).join('') +  
   '</select>';
 };
 
@@ -38,6 +51,7 @@ const selectLocation = (e) => {
 const selectRole = () => {
   const val = document.getElementById('roleDropdown').value;
   val === 'All Roles' ? delete filter['Department'] : filter['Department'] = val;
+  window.history.replaceState(null, null, `/?role=${val}`);
   const people = filtering(everyone);
   displayPeeps(people);
 };
@@ -50,8 +64,7 @@ const trimUrl = url => {
   return str[str.length - 1] === '/' ? str.substr(0, str.length - 1) : str;
 }
 
-const toggleRelocate = () => { // should be check box instead of boolean.
-  // list has 10 people, if willing, show 
+const toggleRelocate = () => { 
   filter['Open to Relocate'] === true ? delete filter['Open to Relocate'] : filter['Open to Relocate'] = true;
   const people = filtering(everyone);
   displayPeeps(people);
@@ -127,3 +140,8 @@ const displayPeeps = (peeps) => {
 }
 
 const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
