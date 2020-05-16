@@ -1,10 +1,12 @@
 @import "../variables";
 
-
 /* =Basic structure
 -------------------------------------------------------------- */
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
   color: $night-font;
 }
 
@@ -16,7 +18,6 @@ h1 {
 }
 
 h2 {
-  margin: 1.5em 0 0.75em;
   font-size: 1.25em;
   line-height: 1.2;
   font-weight: bold;
@@ -33,21 +34,28 @@ h4 {
   font-size: 1.2em;
   line-height: 1.2;
 }
-ul,ol,p {
-  color: #aaa
+ul,
+ol,
+p {
+  color: $body-font-color;
+  line-height: 1.5;
 }
 strong {
   color: #fff;
 }
 
-.story p {
-  margin-bottom: 1em;
+.story  {
+  h2 {
+    margin-bottom: 0.75em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
 }
-
 
 @media (min-width: 400px) {
   h1 {
-    font-size: 2.5em;    
+    font-size: 2.5em;
   }
 }
 
@@ -74,7 +82,6 @@ strong {
   }
 }
 
-
 a {
   text-decoration: none;
 }
@@ -93,4 +100,3 @@ img {
   margin-bottom: 2em;
   font-size: 10px;
 }
-

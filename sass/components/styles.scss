@@ -15,7 +15,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include device(laptop) {
+  @include device(desktop) {
     margin-top: 2.5rem;
     grid-gap: 2.5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -29,83 +29,172 @@
   }
 }
 
+.search {
+  @include device(desktop) {
+    padding-top: 3em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .search-desc {
+    padding-top: 2rem;
+
+    @include device(desktop) {
+      padding-top: 0;
+      flex-grow: 1;
+    }
+
+    h2 {
+      margin-bottom: 0.75em;
+    }
+  }
+}
+
 .nav {
-  padding: 1em 1em 0;
-  label {
-    background-color: transparent;
-    width: 32%;
-    display: inline-block;
-    box-sizing: border-box;
-    select {
-      -webkit-appearance: none;
-      background: transparent;
-      font-size: 16px;
-      border: none;
-      color: $color-brand;
-      padding: 14px 12px 14px 20px;
-    }
-    input[type="checkbox"] {
-      height: 18px;
-      width: 18px;
-      margin: 0 4px 0 0;
-      float: left;
-      border-radius: 3px;
-      border: none;
-      box-shadow: none;
-    }
-  }
-  .relocate {
-    width: 32%;
-    span {
-      display: inline;
-    }
-  }
-  @include device(tablet) {
-    float: right;
-    padding: 0;
-    label {
-      border: 2px solid $color-brand;
-      border-radius: 50px;
-      font-size: 1em;
-      color: $color-brand;
-      margin-left: 1em;
-      width: auto;
-      float: left;
-      padding-left: 10px;
-      max-width: 200px;
-    }
-    select {
-      font-size: 16px;
-    }
-    .relocate {
-      padding: 13px 20px;
-      width: auto;
-      span {
-        font-size: 1em;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+  display: flex;
+  padding: 0 1em;
+
   @include device(mobile) {
-    padding: 0;
+    height: 56px;
     position: fixed;
     bottom: 24px;
     left: 0;
-    width: 100%;
-    .container {
-      min-height: 52px;
-      background: $color-brand;
-      border-radius: 40px;
-      margin: 0 2em;
-      padding: 4px 0;
-      box-shadow: 0 0 20px #000;
-      select,
-      label {
-        color: #fff;
-        min-height: 28px;
+    width: calc(100% - 2em);
+    margin: 0 1em;
+    background: $color-brand;
+    border-radius: 3em;
+    box-shadow: 0 0 20px #000;
+    padding: 0;
+  }
+
+  @include device(tablet) {
+    padding: 2em 0 0 0;
+  }
+
+  @include device(desktop) {
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .container {
+    display: flex;
+
+    @include device(mobile) {
+      align-items: stretch;
+      padding: 0 1rem;
+    }
+  }
+
+  label {
+    max-width: 33.333333%;
+    flex: 0 0 33.333333%;
+    display: flex;
+    align-items: center;
+    color: $color-brand;
+    position: relative;
+
+    &:last-child {
+      &::after {
+        content: none;
       }
+    }
+
+    @include device(mobile) {
+      color: #fff;
+    }
+
+    @include device(oldmobile) {
+      // So "All Locations" doesn't get cut off on small phones
+      &:first-child {
+        min-width: 100px;
+      }
+      &:nth-child(2) {
+        max-width: 75px;
+      }
+      &:last-child {
+        min-width: 90px;
+      }
+    }
+
+    @include device(tablet) {
+      min-width: auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  .select {
+    margin-right: 0.5rem;
+    min-height: 50px;
+    min-width: 100px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 1em;
+      top: calc(50% - 2px);
+      width: 0px;
+      height: 0px;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid $color-brand;
+    }
+
+    @include device(mobile) {
+      min-width: 0;
+      border: none;
+      border-radius: 0;
+      margin-right: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    @include device(tablet) {
+      border: 2px solid $color-brand;
+      border-radius: 56px;
+      margin-right: 1rem;
+      min-height: 50px;
+      min-width: 100px;
+
+      &::after {
+        right: 2.5em;
+      }
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    padding: 1em 0;
+    color: $color-brand;
+
+    @include device(mobile) {
+      color: #fff;
+      padding: 1.1875em 0;
+    }
+
+    @include device(tablet) {
+      padding: 1em 1.5em;
+    }
+  }
+
+  .relocate {
+    display: flex;
+    @include device(tablet) {
+      padding: 1em 1.5rem;
+      border: 2px solid $color-brand;
+      border-radius: 56px;
+    }
+
+    span {
+      @include device(tablet) {
+        margin-left: .5em;
+      } 
     }
   }
 }

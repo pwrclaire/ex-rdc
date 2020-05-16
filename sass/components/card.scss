@@ -1,5 +1,13 @@
 @import "../variables";
 
+/** Contents
+- Card
+- Card Header
+- Card Body
+- Card Footer
+*/
+
+// Card
 .card {
   min-width: 0; // needed for text-overflow: ellipses in desc https://stackoverflow.com/questions/38223879/white-space-nowrap-breaks-flexbox-layout
   box-shadow: 0 4px 12px #1b1b1b;
@@ -9,11 +17,16 @@
   flex-direction: column;
   padding: 1em;
 
+  // Save guards for horizontal scroll on old phones
+  @include device(oldmobile) {
+    overflow: hidden;
+  }
   @include device(tablet) {
     padding: 1.5em;
   }
 }
 
+// Card Header
 .card-header {
   display: flex;
   margin-bottom: 1rem;
@@ -24,6 +37,10 @@
     .name {
       font-size: 1.5em;
       margin: 0.25em 0 0.5rem;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
 
       @include device(tablet) {
         font-size: 1.75em;
@@ -41,11 +58,23 @@
       flex-wrap: wrap;
       align-items: center;
       font-size: 0.875em;
+      color: $body-font-color;
+
+      span {
+        margin-bottom: 2px;
+
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      > span {
+        margin-right: 0.5em;
+      }
     }
 
     .relocate {
       height: 12px;
-      margin-left: 8px;
       font-size: 8px;
       text-transform: uppercase;
       letter-spacing: 0.0125em;
@@ -58,9 +87,7 @@
     }
   }
 
-  /** 
-  * Card Imager
-    */
+  // Card Image
   figure {
     border-radius: 1rem;
     overflow: hidden;
@@ -83,6 +110,7 @@
   }
 }
 
+// Card Body
 .card-body {
   display: flex;
   flex-direction: column;
@@ -96,7 +124,7 @@
 
     strong {
       text-transform: uppercase;
-      color: #aaa;
+      color: $body-font-color;
     }
   }
 
@@ -106,6 +134,7 @@
   }
 }
 
+// Card Footer
 .card-footer {
   .links {
     list-style: none;

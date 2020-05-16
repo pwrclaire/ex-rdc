@@ -1,14 +1,13 @@
-
 @import "../variables";
 
 body {
-	background: #222 url(/images/background.jpg) no-repeat 0 -290px;
+  background: #222 url('../images/background.jpg') no-repeat 0 -290px;
 }
 
 .site {
-	max-width: $sitewidth;
-	margin: auto;
-	padding: 1em;
+  max-width: $sitewidth;
+  margin: auto;
+  padding: 1em;
 }
 
 header {
@@ -19,44 +18,44 @@ header {
 }
 
 .wrapper {
-	max-width: 720px;
-	padding: 0 1em 1em;
+  max-width: 720px;
+  padding: 0 1em 1em;
 }
 
 .footer {
-	clear: both;
-	background: #000;
-	min-height: 100px;
-	margin-top: 2em;
-	padding: 3em 1em 5em;
-	background: url(/images/footer.png);
-	p {
-		margin: 2em 0;
-	}
-	a {
-		border-bottom: 1px dotted #fff;
-	}
+  clear: both;
+  background: #000;
+  min-height: 100px;
+  margin-top: 2em;
+  padding: 3em 1em 5em;
+  background: url('../images/footer.png');
+  p {
+    margin: 2em 0;
+  }
+  a {
+    border-bottom: 1px dotted #fff;
+  }
 }
+
 @include device(tablet) {
-	body {
-		background-position: 0 0;
-	  background-size: cover;
+  body {
+    background-position: 0 0;
+    background-size: cover;
     background-attachment: fixed;
-	}
-	.wrapper {
-		padding: 0;
-	}
-	.site {
-		padding: 2em;
-	}
-	.footer {
-	  padding: 4em 0;
+  }
+  .wrapper {
+    padding: 0;
+  }
+  .site {
+    padding: 2em;
+  }
+  .footer {
+    padding: 4em 0;
   }
 }
 
 @include device(laptop) {
-	.site {
-		padding: 2em;
+  .site {
+    padding: 2em;
   }
 }
-
