@@ -1,0 +1,80 @@
+/* Congfig vars */
+
+$font: Helvetica, sans-serif;
+$font-serif: Georgia, serif;
+
+$sitewidth: 1400px;
+
+$color: #eee;
+
+$border-radius: 8px;
+$border-radius-m: 12px;
+$margin: 40px;
+
+$paddmaster: 1.5em;
+
+$night: #111;
+$night-font: #eee;
+$color-footer: #000;
+$day-text: #ccc;
+$day-read: #777;
+$night-para: #999;
+
+/* Brand  */
+$color-folio: #202530;
+
+/* $color-brand:     #FF1493 */
+/* $color-brand:     #E6007A */
+$color-brand: #ef5e5e;
+$color-secondary: #ea1525;
+
+$footer-height: 3em;
+
+/* Reuse this in many places where we only hide it visually, but still accessible */
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* Death to 'breakpoints' */
+@mixin device($size) {
+  /* Landscape tablet + smaller desktop devices */
+  @if $size == desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $size == laptop {
+    /* Landscape tablet + smaller desktop devices */
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    /* Portrait tablet ~ 10% total traffic */
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == phablet {
+    /* Landscape phones and mini tablets */
+    @media (min-width: 480px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    /* All mobiles - 50% (that's half!) total traffic */
+    @media (max-width: 440px) {
+      @content;
+    }
+  } @else if $size == oldmobile {
+    /* Only < iphone 5 - smallest devices */
+    @media (width: 320px) {
+      @content;
+    }
+  }
+}

@@ -107,32 +107,41 @@ const displayPeeps = (peeps) => {
 
       const avatar = photo && photo.url || 'images/avatar.png';
       const displayDepartment = department ? `${department}` : '';
-      const displaySuperpower = superpower ? `Superpower: ${superpower}` : '';
-      const displayLinkedIn = linkedIn ? `<li class="linkedin"><a href=${linkedIn} target="_blank">Linkedin</a></li>` : '';
-      const displayWebsite = website ? `<li class="website"><a href=${website} target="_blank">${trimUrl(website)}</a></li>` : '';
-      const displayGithub = github ? `<li class="github"><a href=${github} target="_blank">Github</a></li>` : '';
-      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} target="_blank">Twitter</a></li>` : '';
-      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank">Dribbble</a></li>` : '';
+      const displaySuperpower = superpower ? `<strong>Superpower</strong>: ${superpower}` : '';
+      const displayLinkedIn = linkedIn ? `<li><a href=${linkedIn} target="_blank"><img src="images/linkedin-in.svg" alt="Linkedin" />Linkedin</a></li>` : '';
+      const displayWebsite = website ? `<li class="website"><a href=${website} target="_blank"><img src="images/globe.svg" alt="Website" />${trimUrl(website)}</a></li>` : '';
+      const displayGithub = github ? `<li class="github"><a href=${github} target="_blank"><img src="images/github.svg" alt="Github" />Github</a></li>` : '';
+      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} target="_blank"><img src="images/twitter.svg" alt="Twitter" />Twitter</a></li>` : '';
+      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank"><img src="images/dribble.svg" alt="Dribble" />Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
-      const displayRemote = remote ? `Open to Remote ` : '';
+      const displayRemote = remote ? `<span class="relocate">Open to Remote</span>` : '';
       const displayRelocate = relocate ? `<span class="relocate">Can relocate</span>` : '';
+      const displayLocationOptions = displayRelocate || displayRemote;
 
-      return '<article class="card">' +
-        `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
-        '<aside>' +
-            '<strong>' + `${name}` + '</strong>' +
-            '<em>' + `${title}` + '</em>' +
-            '<p class="city">' + `${displayCity}` + '&nbsp;' + `${displayRelocate}` + '</p>' +
+      return (
+        '<article class="card">' +
+          '<div class="card-header">' +
+            '<div class="card-title">' +
+              '<h3 class="name">' + `${name}` + '</h3>' +
+              '<p class="title">' + `${title}` + '</p>' +
+              '<div class="city">' + `<span>${displayCity}</span>` + `${displayLocationOptions}` + '</div>' +
+            '</div>' +
+            `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
+          '</div>' + 
+          '<div class="card-body">' +
             '<p class="superpower">' + `${displaySuperpower}` + '</p>'+
             '<p class="desc">' + `${description}` + '</p>' +
+          '</div>' +
+          '<div class="card-footer">' +
             '<ul class="links clearfix">' +
               `${displayLinkedIn}` +
               `${displayWebsite}` + 
               `${displayGithub}` + 
               `${displayTwitter}` + 
             '</ul>' +
-          '</aside>' +
-        '</article>';
+          '</div>' +
+        '</article>'
+      );
     }).join('');
   } else {
     app.innerHTML = `<h3> Yay, no one was laid off for this selection</h3>`;

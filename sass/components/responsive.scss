@@ -1,5 +1,5 @@
 
-@import "variables";
+@import "../variables";
 
 body {
 	background: #222 url(/images/background.jpg) no-repeat 0 -290px;
@@ -17,7 +17,6 @@ header {
     padding-top: 1em;
   }
 }
-
 
 .wrapper {
 	max-width: 720px;
@@ -52,32 +51,12 @@ header {
 	}
 	.footer {
 	  padding: 4em 0;
-	}
-	.card {
-		float: left;
-		width: 47%;
-		margin-right: 3%;
-		min-height: 350px;
-		&:nth-child(even) {
-      margin-right: 0;
-    }
-	}
+  }
 }
 
 @include device(laptop) {
 	.site {
 		padding: 2em;
-	}
-	.card {
-		float: left;
-		width: 31%;
-		margin-right: 3.5%;
-		&:nth-child(even) {
-      margin-right: 3.5%;
-    }
-		&:nth-child(3n+3) {
-      margin-right: 0;
-    }
-	}
+  }
 }
 

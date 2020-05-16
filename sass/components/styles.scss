@@ -1,10 +1,25 @@
-@import "variables";
+@import "../variables";
 
-#app {
+.app {
   min-height: 500px;
   background: url(/images/loading.gif) no-repeat 50%;
   background-size: 80px auto;
-  display: block;
+
+  display: grid;
+  grid-gap: 1rem;
+
+  @include device(tablet) {
+    margin-top: 2rem;
+    grid-gap: 2rem;
+    grid-auto-rows: 350px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include device(laptop) {
+    margin-top: 2.5rem;
+    grid-gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .link {
@@ -94,130 +109,3 @@
     }
   }
 }
-
-.card {
-  box-shadow: 0 4px 12px #1b1b1b;
-  padding: 1em;
-  border-radius: 16px;
-  margin-top: 1em;
-  background: #000;
-  figure {
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    float: right;
-    width: 110px;
-    height: 110px;
-    margin-left: 1em;
-    background: url(/images/avatar.png) no-repeat;
-    background-size: cover;
-    img {
-      min-height: 110px;
-      min-width: 110px;
-    }
-  }
-  @include device(tablet) {
-    margin-top: 3em;
-    padding: 1.5em;
-    figure {
-      width: 130px;
-      height: auto;
-      max-height: 130px;
-    }
-  }
-  aside {
-    p {
-      margin-bottom: 1em;
-    }
-    strong {
-      display: block;
-      font-size: 1.5em;
-      margin: 0.25em 0 0.5em;
-      @include device(tablet) {
-        font-size: 1.75em;
-      }
-    }
-    em {
-      font-style: normal;
-      font-weight: bold;
-      margin-bottom: 0.25em;
-      display: block;
-    }
-    .desc,
-    .superpower {
-      font-size: 0.75em;
-    }
-    .city {
-      margin-bottom: 10px;
-      margin-right: 6px;
-      font-size: 0.875em;
-    }
-    .relocate {
-      background: url(/images/relocate.png) no-repeat 3px 50%;
-      background-size: 10px auto;
-      font-size: 9px;
-      display: inline-block;
-      margin: -3px 0 1em 0;
-      background-color: $color-brand;
-      border-radius: 2px;
-      padding: 2px 4px 1px 16px;
-      color: #fff;
-      text-transform: uppercase;
-      /* Remove the background */
-      background: $color-brand;
-      padding-left: 4px;
-    }
-
-    @include device(tablet) {
-      .desc {
-        max-height: 40px;
-        overflow: hidden;
-      }
-    }
-  }
-  .links {
-    list-style: none;
-    margin: 0;
-    li {
-      padding: 0;
-      width: 50%;
-      float: left;
-      overflow: hidden;
-      background-repeat: no-repeat;
-      background-size: 18px auto;
-      background-position: 0 50%;
-      z-index: 99;
-      a {
-        display: inline-block;
-        padding: 10px 16px 10px 26px;
-        font-weight: bold;
-        color: $color-brand;
-      }
-      a:hover {
-        color: #fff;
-      }
-      em {
-        font-style: normal;
-      }
-    }
-    .github {
-      background-image: url(/images/github.png);
-    }
-    .linkedin {
-      background-image: url(/images/linkedin.png);
-      background-position: 0 7px;
-    }
-    .twitter {
-      background-image: url(/images/twitter.png);
-    }
-    .website {
-      background-image: url(/images/website.png);
-    }
-    .instagram {
-      background-image: url(/images/instagram.png);
-    }
-  }
-}
-
-
-
