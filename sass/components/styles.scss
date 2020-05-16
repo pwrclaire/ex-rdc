@@ -7,6 +7,13 @@
   display: block;
 }
 
+.link {
+  border-bottom: 1px dotted #fff;
+  &:hover {
+    border: none;
+  }
+}
+
 .nav {
   padding: 1em 1em 0;
   label {
