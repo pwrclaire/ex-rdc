@@ -118,6 +118,10 @@
   flex-grow: 1;
   overflow: scroll;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .superpower {
     font-size: 0.75em;
     margin-bottom: 1em;
