@@ -30,6 +30,13 @@
 }
 
 .search {
+  @include device(phablet) {
+    padding: 0 1em;
+  }
+  @include device(tablet) {
+    padding: 0;
+  }
+
   @include device(desktop) {
     padding-top: 3em;
     display: flex;
@@ -38,10 +45,14 @@
   }
 
   .search-desc {
-    padding-top: 2rem;
+    padding: 1em 0 2em 0;
+
+    @include device(tablet) {
+      padding: 2em 0 0 0;
+    }
 
     @include device(desktop) {
-      padding-top: 0;
+      padding: 0;
       flex-grow: 1;
     }
 
@@ -53,7 +64,6 @@
 
 .nav {
   display: flex;
-  padding: 0 1em;
 
   @include device(mobile) {
     height: 56px;
@@ -100,21 +110,21 @@
       }
     }
 
-    @include device(mobile) {
-      color: #fff;
-    }
-
     @include device(oldmobile) {
       // So "All Locations" doesn't get cut off on small phones
       &:first-child {
         min-width: 100px;
       }
       &:nth-child(2) {
-        max-width: 75px;
+        max-width: 80px;
       }
       &:last-child {
         min-width: 90px;
       }
+    }
+
+    @include device(mobile) {
+      color: #fff;
     }
 
     @include device(tablet) {
@@ -175,7 +185,12 @@
 
     @include device(mobile) {
       color: #fff;
-      padding: 1.1875em 0;
+      padding: 1.1875em 0 1.1875em 1em;
+    }
+
+    @include device(oldmobile) {
+      color: #fff;
+      padding: 1.1875em 0.5em;
     }
 
     @include device(tablet) {

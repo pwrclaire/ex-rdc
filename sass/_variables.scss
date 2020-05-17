@@ -75,7 +75,7 @@ $footer-height: 3em;
     }
   } @else if $size == oldmobile {
     /* Only < iphone 5 - smallest devices */
-    @media (width: 320px) {
+    @media (max-width: 320px) {
       @content;
     }
   }

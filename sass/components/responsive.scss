@@ -19,7 +19,14 @@ header {
 
 .wrapper {
   max-width: 720px;
-  padding: 0 1em 1em;
+  margin-bottom: 1em;
+
+  @include device(phablet) {
+    padding: 0 1em;
+  }
+  @include device(tablet) {
+    padding: 0;
+  }
 }
 
 .footer {
@@ -42,9 +49,6 @@ header {
     background-position: 0 0;
     background-size: cover;
     background-attachment: fixed;
-  }
-  .wrapper {
-    padding: 0;
   }
   .site {
     padding: 2em;
