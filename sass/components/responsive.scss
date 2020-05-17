@@ -1,14 +1,13 @@
-
-@import "variables";
+@import "../variables";
 
 body {
-	background: #222 url(/images/background.jpg) no-repeat 0 -290px;
+  background: #222 url('../images/background.jpg') no-repeat 0 -290px;
 }
 
 .site {
-	max-width: $sitewidth;
-	margin: auto;
-	padding: 1em;
+  max-width: $sitewidth;
+  margin: auto;
+  padding: 1em;
 }
 
 header {
@@ -18,66 +17,49 @@ header {
   }
 }
 
-
 .wrapper {
-	max-width: 720px;
-	padding: 0 1em 1em;
+  max-width: 720px;
+  margin-bottom: 1em;
+
+  @include device(phablet) {
+    padding: 0 1em;
+  }
+  @include device(tablet) {
+    padding: 0;
+  }
 }
 
 .footer {
-	clear: both;
-	background: #000;
-	min-height: 100px;
-	margin-top: 2em;
-	padding: 3em 1em 5em;
-	background: url(/images/footer.png);
-	p {
-		margin: 2em 0;
-	}
-	a {
-		border-bottom: 1px dotted #fff;
-	}
+  clear: both;
+  background: #000;
+  min-height: 100px;
+  margin-top: 2em;
+  padding: 3em 1em 5em;
+  background: url('../images/footer.png');
+  p {
+    margin: 2em 0;
+  }
+  a {
+    border-bottom: 1px dotted #fff;
+  }
 }
+
 @include device(tablet) {
-	body {
-		background-position: 0 0;
-	  background-size: cover;
+  body {
+    background-position: 0 0;
+    background-size: cover;
     background-attachment: fixed;
-	}
-	.wrapper {
-		padding: 0;
-	}
-	.site {
-		padding: 2em;
-	}
-	.footer {
-	  padding: 4em 0;
-	}
-	.card {
-		float: left;
-		width: 47%;
-		margin-right: 3%;
-		min-height: 350px;
-		&:nth-child(even) {
-      margin-right: 0;
-    }
-	}
+  }
+  .site {
+    padding: 2em;
+  }
+  .footer {
+    padding: 4em 0;
+  }
 }
 
 @include device(laptop) {
-	.site {
-		padding: 2em;
-	}
-	.card {
-		float: left;
-		width: 31%;
-		margin-right: 3.5%;
-		&:nth-child(even) {
-      margin-right: 3.5%;
-    }
-		&:nth-child(3n+3) {
-      margin-right: 0;
-    }
-	}
+  .site {
+    padding: 2em;
+  }
 }
-

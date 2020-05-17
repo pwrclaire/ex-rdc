@@ -39,15 +39,11 @@
   </script>
   <script src="js/index.js"></script>
 
-<body class="home ">
+<body class="home">
   <ul class="visuallyhidden">
     <li><a href="#main-nav" title="Go directly to the website navigation">skip to Main Navigation</a></li>
     <li><a href="#main-content" title="Go directly to main content">skip to Content</a></li>
   </ul>
-
-  <header role="banner" class="header">
-
-  </header>
 
   <main id="main-content">
     <section class="site clearfix">
@@ -62,36 +58,36 @@
           </p>
         </div>
 
-        <aside class="nav">
-          <div class="container">
+        <div class="search">
+          <nav class="nav">
             <label>
               <span class="visuallyhidden">Filter by location:</span>
-              <span id="location"></span>
+              <span class="select" id="location"></span>
             </label>
             <label>
               <span class="visuallyhidden">Filter for role:</span>
-              <span id="role"></span>
+              <span class="select" id="role"></span>
             </label>
-            <!-- <checkbox onclick="toggleRelocate()">Relocate?</checkbox> -->
-            <label for="relocate" class="relocate">
-              <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
-              <span>Relocate?</span>
+            <label for="relocate">
+              <div class="relocate">
+                <input type="checkbox" id="relocate" name="relocate" value="Relocate" onclick="toggleRelocate()">
+                <span>Relocate?</span>
+              </div> 
             </label>
+          </nav>
+          <div class="search-desc">
+            <h2>Some of the amazing people impacted</h2>
+            <p>
+              Search for talent while you #StayHome.
+              <strong>Impacted? <a href="mailto:join@rdc-ex.com" class="link">Email us to get added</a>.</strong>
+            </p>
           </div>
-
-        </aside>
-
-        <div class="wrapper">
-          <h2>Some of the amazing people impacted</h2>
-
-          <p>Search for talent while you #StayHome.</p>
-        </div>
       </header>
 
       <div id="dropdown">
       </div>
 
-      <div id="app"></div>
+      <div id="app" class="app"></div>
     </section>
 
 
