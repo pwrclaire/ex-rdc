@@ -109,10 +109,10 @@ const displayPeeps = (peeps) => {
       const displayDepartment = department ? `${department}` : '';
       const displaySuperpower = superpower ? `<strong>Superpower</strong>: ${superpower}` : '';
       const displayLinkedIn = linkedIn ? `<li><a href=${linkedIn} target="_blank"><img src="images/linkedin-in.svg" alt="Linkedin" />Linkedin</a></li>` : '';
-      const displayWebsite = website ? `<li class="website"><a href=${website} target="_blank"><img src="images/globe.svg" alt="Website" />${trimUrl(website)}</a></li>` : '';
-      const displayGithub = github ? `<li class="github"><a href=${github} target="_blank"><img src="images/github.svg" alt="Github" />Github</a></li>` : '';
-      const displayTwitter = twitter ? `<li class="twitter"><a href=${twitter} target="_blank"><img src="images/twitter.svg" alt="Twitter" />Twitter</a></li>` : '';
-      const displayDribbble = dribbble ? `<li class="dribbble"><a href=${dribbble} target="_blank"><img src="images/dribble.svg" alt="Dribble" />Dribbble</a></li>` : '';
+      const displayWebsite = website ? `<li><a href=${website} target="_blank"><img src="images/globe.svg" alt="Website" />${trimUrl(website)}</a></li>` : '';
+      const displayGithub = github ? `<li><a href=${github} target="_blank"><img src="images/github.svg" alt="Github" />Github</a></li>` : '';
+      const displayTwitter = twitter ? `<li><a href=${twitter} target="_blank"><img src="images/twitter.svg" alt="Twitter" />Twitter</a></li>` : '';
+      const displayDribbble = dribbble ? `<li><a href=${dribbble} target="_blank"><img src="images/dribble.svg" alt="Dribble" />Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
       const displayRemote = remote ? `<span class="relocate">Open to Remote</span>` : '';
       const displayRelocate = relocate ? `<span class="relocate">Can relocate</span>` : '';
@@ -133,7 +133,7 @@ const displayPeeps = (peeps) => {
             '<p class="desc">' + `${description}` + '</p>' +
           '</div>' +
           '<div class="card-footer">' +
-            '<ul class="links clearfix">' +
+            '<ul class="links">' +
               `${displayLinkedIn}` +
               `${displayWebsite}` + 
               `${displayGithub}` + 
