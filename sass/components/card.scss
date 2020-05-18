@@ -37,10 +37,6 @@
     .name {
       font-size: 1.5em;
       margin: 0.25em 0 0.5rem;
-      word-break: break-word;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-      hyphens: auto;
 
       @include device(tablet) {
         font-size: 1.75em;
@@ -74,7 +70,7 @@
     }
 
     .relocate {
-      height: 12px;
+      height: 14px;
       font-size: 8px;
       text-transform: uppercase;
       letter-spacing: 0.0125em;
@@ -82,7 +78,7 @@
       align-items: center;
       background-color: $color-brand;
       border-radius: 2px;
-      padding: 1px 4px 0 4px;
+      padding: 0 4px;
       color: #fff;
     }
   }
