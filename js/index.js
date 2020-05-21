@@ -70,6 +70,12 @@ const toggleRelocate = () => {
   displayPeeps(people);
 }
 
+const toggleRemote = () => { 
+  filter['Open to Remote'] === true ? delete filter['Open to Remote'] : filter['Open to Remote'] = true;
+  const people = filtering(everyone);
+  displayPeeps(people);
+}
+
 const filtering = (peeps) => {
   peeps = peeps.filter(peep => {
     for (let key in filter) {
@@ -114,9 +120,8 @@ const displayPeeps = (peeps) => {
       const displayTwitter = twitter ? `<li><a href=${twitter} target="_blank"><img src="images/twitter.svg" alt="Twitter" />Twitter</a></li>` : '';
       const displayDribbble = dribbble ? `<li><a href=${dribbble} target="_blank"><img src="images/dribble.svg" alt="Dribble" />Dribbble</a></li>` : '';
       const displayCity = city ? `${city}` : '';
-      const displayRemote = remote ? `<span class="relocate">Open to Remote</span>` : '';
-      const displayRelocate = relocate ? `<span class="relocate">Can relocate</span>` : '';
-      const displayLocationOptions = displayRelocate || displayRemote;
+      const displayRemote = remote ? `<span class="location-label">Open to Remote</span>` : '';
+      const displayRelocate = relocate ? `<span class="location-label">Can relocate</span>` : '';
 
       return (
         '<article class="card">' +
@@ -124,7 +129,10 @@ const displayPeeps = (peeps) => {
             '<div class="card-title">' +
               '<h3 class="name">' + `${name}` + '</h3>' +
               '<p class="title">' + `${title}` + '</p>' +
-              '<div class="city">' + `<span>${displayCity}</span>` + `${displayLocationOptions}` + '</div>' +
+              '<div class="location">' + 
+                '<span class="city">' + `${displayCity}` + '</span>' +
+                `${displayRelocate}`+ `${displayRemote}` +
+              '</div>' +
             '</div>' +
             `<figure><img src=${avatar} alt="${name}" loading="lazy" /></figure>` +
           '</div>' + 

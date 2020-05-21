@@ -49,27 +49,20 @@
       margin-bottom: 0.25em;
     }
 
-    .city {
+    .location {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      font-size: 0.875em;
-      color: $body-font-color;
-
-      span {
-        margin-bottom: 2px;
-
-        :last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      > span {
-        margin-right: 0.5em;
-      }
     }
 
-    .relocate {
+    .city {
+      font-size: 0.875em;
+      color: $body-font-color;
+      margin-bottom: 0.5em;
+      margin-right: 0.5em;
+    }
+
+    .location-label {
       height: 14px;
       font-size: 8px;
       text-transform: uppercase;
@@ -80,7 +73,10 @@
       border-radius: 2px;
       padding: 0 4px;
       color: #fff;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
     }
+
   }
 
   // Card Image
