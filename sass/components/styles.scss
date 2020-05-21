@@ -111,6 +111,7 @@
     }
 
     @include device(oldmobile) {
+      min-width: 90px;
       // So "All Locations" doesn't get cut off on small phones
       &:first-child {
         min-width: 100px;
@@ -118,19 +119,27 @@
       &:nth-child(2) {
         max-width: 80px;
       }
-      &:last-child {
-        min-width: 90px;
-      }
     }
 
     @include device(mobile) {
       color: #fff;
     }
 
+    @include device(phablet) {
+      max-width: calc(25%);
+      flex: 0 0 calc(25%);
+    }
+
     @include device(tablet) {
       min-width: auto;
       flex: 0 0 auto;
+      margin-right: 1em;
+
+      &:last-child {
+        margin-right: none;
+      }
     }
+
   }
 
   .select {
@@ -164,7 +173,6 @@
     @include device(tablet) {
       border: 2px solid $color-brand;
       border-radius: 56px;
-      margin-right: 1rem;
       min-height: 50px;
       min-width: 100px;
 
@@ -198,6 +206,7 @@
     }
   }
 
+  .remote,
   .relocate {
     display: flex;
     align-items: center;
@@ -210,16 +219,10 @@
       box-shadow: none;
     }
 
-    @include device(tablet) {
-      padding: 1em 1.5rem;
-      border: 2px solid $color-brand;
-      border-radius: 56px;
-    }
-
     span {
       @include device(tablet) {
-        margin-left: .5em;
-      } 
+        margin-left: 0.5em;
+      }
     }
   }
 }

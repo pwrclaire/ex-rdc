@@ -63,3 +63,9 @@ header {
     padding: 2em;
   }
 }
+
+.hidden-phablet {
+  @media (max-width: 480px) {
+    display: none !important;
+  }
+}
